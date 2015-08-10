@@ -9,7 +9,7 @@ PHP Tomita Parser wrapper
 ```php
 
 $p = new Tomita\TomitaParser('/home/user/tomita-parser', '/home/user/config.proto');
-$p->run('Text to parse');
+$result = $p->run('Text to parse');
 ```
 
 Важно
