@@ -1,0 +1,16 @@
+{
+    "name": "makhov/php-tomita",
+    "description": "PHP Wrapper to Tomita Parser.",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexey Makhov",
+            "email": "makhov.alex@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Tomita": "src/"
+        }
+    }
+}
