@@ -17,3 +17,6 @@ $result = $p->run('Text to parse');
 
 - config.proto не должен содержать дескрипторов File (ввод/вывод осуществляется через STDIN/STDOUT)
 - Формат вывода — xml
+
+
+За пример спасибо автору [poor-python-yandex-tomita-parser](https://github.com/vas3k/poor-python-yandex-tomita-parser).
