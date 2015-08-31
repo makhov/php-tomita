@@ -1,9 +1,8 @@
 <?php
 /**
  * Exception class for Tomita Parser
- * User: makhov
- * Date: 10.08.15
- * Time: 10:03
+ *
+ * @author Alexey Makhov <makhov.alex@gmail.com>
  */
 
 namespace Tomita;

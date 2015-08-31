@@ -1,8 +1,8 @@
 <?php
 /**
- * User: makhov
- * Date: 10.08.15
- * Time: 0:11
+ * Simple facade to use Yandex Tomita.Parser
+ *
+ * @author Alexey Makhov <makhov.alex@gmail.com>
  */
 
 namespace Tomita;
@@ -20,14 +20,14 @@ class TomitaParser {
     }
 
     public function run($text) {
-        $descriptorspec = array(
-            0 => array('pipe', 'r'),
-            1 => array('pipe', 'w'),
-            2 => array('pipe', 'w')
+        $descriptors = array(
+            0 => array('pipe', 'r'), // stdin
+            1 => array('pipe', 'w'), // stdout
+            2 => array('pipe', 'w')  // stderr
         );
 
         $cmd = sprintf('%s %s', $this->execPath, $this->configPath);
-        $process = proc_open($cmd, $descriptorspec, $pipes, dirname($this->configPath));
+        $process = proc_open($cmd, $descriptors, $pipes, dirname($this->configPath));
 
         if (is_resource($process)) {
 
@@ -35,6 +35,7 @@ class TomitaParser {
             fclose($pipes[0]);
 
             $output = stream_get_contents($pipes[1]);
+
             fclose($pipes[1]);
             fclose($pipes[2]);
 
